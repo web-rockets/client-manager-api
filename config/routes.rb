@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   scope :api, defaults: { format: :json } do
-    get 'users' => 'users#all'
-    put 'users/:id' => 'users#update'
-    post 'users' => 'users#create'
-    delete 'users' => 'users#remove'
+    resources :users, except: [:new, :edit]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
