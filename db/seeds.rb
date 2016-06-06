@@ -12,6 +12,8 @@ case Rails.env
 when 'development'
     puts 'Nada a alimentar'
 when 'test'
+    user = User.create name: 'Admin', email: 'admin@gmail.com', password: '123456'
+    puts "#{user.name} criado com sucesso"
     user = User.create name: 'John', email: 'john@gmail.com', password: '123456'
     puts "#{user.name} criado com sucesso"
     user = User.create name: 'Gib', email: 'gib@gmail.com', password: '123456'
