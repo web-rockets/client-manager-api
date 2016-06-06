@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   scope :api, defaults: { format: :json } do
+    # Authentication
+    post 'user_token' => 'user_token#create'
+
+    # Resources
     resources :users, except: [:new, :edit]
   end
 

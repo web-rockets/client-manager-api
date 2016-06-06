@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  include Knock::Authenticable
+
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   rescue_from ActionController::ParameterMissing, :with => :parameter_missing
   rescue_from ActiveModel::ForbiddenAttributesError, :with => :forbidden_attributes_error
