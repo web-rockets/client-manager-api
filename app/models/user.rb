@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
   def self.from_token_payload(payload)
     User.find payload['sub']
   end
+
+  # Returns a Hash User without password_digest
+  def without_password
+    attributes.except 'password_digest'
+  end
 end
