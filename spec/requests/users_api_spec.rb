@@ -3,6 +3,8 @@ require 'rails_helper'
 describe 'Users API', type: :request do
   include APIHelpers
 
+  before(:all) {authenticate}
+
   describe "when list users: GET /api/users" do
     it "should return json of users without password field" do
       # Act

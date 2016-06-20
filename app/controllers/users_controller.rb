@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user
+
+  # GET /me
+  def me
+    render json: current_user.without_password
+  end
+
   # GET /users
   def index
     @users = User.all.without_password

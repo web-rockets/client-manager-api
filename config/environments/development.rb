@@ -38,4 +38,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Configurando para API. Opções: :default (html) ou :api
+  config.debug_exception_response_format = :api
 end

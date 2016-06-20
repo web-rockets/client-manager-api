@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt'
+gem 'knock'
+gem 'rails-api'
 
 gem 'rack-cors', :require => 'rack/cors'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
