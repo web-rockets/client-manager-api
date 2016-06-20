@@ -6,14 +6,4 @@ class User < ActiveRecord::Base
 
   scope :without, -> (*columns) { select(attribute_names - columns) }
   scope :without_password, -> { without('password_digest') }
-
-  # This method suppress deprecated warnings from Knock.
-  def self.from_token_payload(payload)
-    User.find payload['sub']
-  end
-
-  # Returns a Hash User without password_digest
-  def without_password
-    attributes.except 'password_digest'
-  end
 end

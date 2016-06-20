@@ -12,5 +12,3 @@
 !/log/.keep
 /tmp
 coverage/
-.byebug_history
-.idea/
